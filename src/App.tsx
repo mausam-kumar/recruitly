@@ -7,19 +7,24 @@ import CompanyList from './components/CompanyList';
 import Company from './components/Company';
 import AddCompany from './components/AddCompany';
 import EditCompany from './components/EditCompany';
+import ProtectedRoute from './ProtectedRoute';
+import useAuth from './hooks/useAuth';
 
 function App() {
+  const { isLoggedIn } = useAuth()
 
   return (
     <MantineProvider>
       <div style={{ padding: 16 }}>
         <Router>
           <Routes>
-            <Route path="/" element={<CompanyList />} />
-            <Route path="/company/:id" element={<Company />} />
             <Route path="/auth" element={<LoginForm />} />
-            <Route path="/add" element={<AddCompany />} />
-            <Route path="/edit/:id" element={<EditCompany />} />
+            <Route element={<ProtectedRoute isAuthenticated={isLoggedIn} />}>
+              <Route path="/" element={<CompanyList />} />
+              <Route path="/company/:id" element={<Company />} />
+              <Route path="/add" element={<AddCompany />} />
+              <Route path="/edit/:id" element={<EditCompany />} />
+            </Route>
           </Routes>
         </Router>
       </div>

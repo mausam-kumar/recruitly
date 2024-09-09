@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Text, Group, Stack, Badge, Avatar } from '@mantine/core';
 import { CompanyDetails as TCompanyDetails } from '../../types';
-import BackButton from '../BackButton';
+import BackButton from './BackButton';
 
 type CompanyProps = {
     company: TCompanyDetails;

@@ -1,6 +1,6 @@
 import React from 'react';
 import AddEditCompanyForm from './CompanyForm';
-import BackButton from '../BackButton';
+import BackButton from './BackButton';
 
 
 const AddCompany: React.FC = () => {

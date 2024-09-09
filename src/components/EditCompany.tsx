@@ -1,6 +1,6 @@
 import React from 'react';
 import AddEditCompanyForm from './CompanyForm';
-import BackButton from '../BackButton';
+import BackButton from './BackButton';
 import { useCompanyDetails } from '../hooks/useCompany';
 import { useParams } from 'react-router-dom';
 import Loader from './Loader';
