@@ -1,10 +1,11 @@
-import { useCompany } from "../hooks/useCompany";
+import { useCompanyList } from "../hooks/useCompany";
 import CompanyCard from "./CompanyCard";
 import ErrorState from "./ErrorState";
 import Loader from "./Loader";
 
 const CompanyList = () => {
-    const { companyList, fetchingCompanyList, error } = useCompany()
+    const { companyList, fetchingCompanyList, error } = useCompanyList()
+    
     if (fetchingCompanyList) {
         return <Loader />
     }
