@@ -42,6 +42,5 @@ export type CompanyFormValues = {
     countryName: string;
     description: string;
     name: string;
-    phone: string;
   }
   

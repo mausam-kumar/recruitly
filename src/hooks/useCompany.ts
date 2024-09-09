@@ -31,11 +31,11 @@ export const usePostCompanyDetails = () => {
     const navigate = useNavigate();
     const url = `${baseURL}/api/company/v2?apiKey=${apiKey}`
     const [isPosting, setIsPosting] = useState(false);
-    const [postData, setPostData] = useState<CompanyFormValues & { id?: number } | null>(null);
+    const [postData, setPostData] = useState<CompanyFormValues & { id?: string } | null>(null);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [postError, setPostError] = useState<any>(null);
 
-    const postCompanyDetails = async (payload: CompanyFormValues & { id?: number }) => {
+    const postCompanyDetails = async (payload: CompanyFormValues & { id?: string }) => {
         setIsPosting(true);
         try {
             const data = await axiosPoster(url, payload);

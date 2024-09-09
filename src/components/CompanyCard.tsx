@@ -15,6 +15,10 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ name, ownerName, id }) => {
     navigate(`/company/${id}`);
   };
 
+  const handleEdit = () => {
+    navigate(`/edit/${id}`)
+  }
+
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Stack>
@@ -26,10 +30,14 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ name, ownerName, id }) => {
             Owner: {ownerName}
           </Text>
         </Flex>
-
-        <Button variant="light" color="blue" fullWidth radius="md" onClick={handleViewDetails}>
-          View Company Details
-        </Button>
+        <Flex justify="space-between" gap={10} align="center">
+          <Button variant="light" color="blue" fullWidth radius="md" onClick={handleViewDetails}>
+            View Details
+          </Button>
+          <Button variant="light" color="blue" fullWidth radius="md" onClick={handleEdit}>
+            Edit Details
+          </Button>
+        </Flex>
       </Stack>
     </Card>
   );

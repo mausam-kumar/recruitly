@@ -5,7 +5,7 @@ import { usePostCompanyDetails } from '../hooks/useCompany';
 
 type AddEditCompanyFormProps = {
     initialValues?: CompanyFormValues;
-    id?: number
+    id?: string
 }
 
 const AddEditCompanyForm: React.FC<AddEditCompanyFormProps> = ({ initialValues, id }) => {
@@ -17,7 +17,6 @@ const AddEditCompanyForm: React.FC<AddEditCompanyFormProps> = ({ initialValues, 
             countryName: '',
             description: '',
             name: '',
-            phone: '',
         },
     });
 
@@ -50,12 +49,8 @@ const AddEditCompanyForm: React.FC<AddEditCompanyFormProps> = ({ initialValues, 
             <TextInput
                 label="Name"
                 placeholder="Enter name"
+                required
                 {...form.getInputProps('name')}
-            />
-            <TextInput
-                label="Phone"
-                placeholder="Enter phone number"
-                {...form.getInputProps('phone')}
             />
             {postError && <Text my={20}>{postError}</Text>}
             <Button type="submit" >Submit</Button>
