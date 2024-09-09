@@ -5,7 +5,7 @@ import Loader from "./Loader";
 
 const CompanyList = () => {
     const { companyList, fetchingCompanyList, error } = useCompanyList()
-    
+
     if (fetchingCompanyList) {
         return <Loader />
     }
@@ -17,7 +17,7 @@ const CompanyList = () => {
     return <div>
         {
             companyList?.map(({ name, ownerName, id }) => {
-                return <CompanyCard name={name} ownerName={ownerName} id={id} />
+                return <CompanyCard key={id} name={name} ownerName={ownerName} id={id} />
             })
         }
     </div>

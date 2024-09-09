@@ -36,3 +36,12 @@ export type CompanyDetails = {
     linkedIn: string;
     twitter: string;
 }
+
+export type CompanyFormValues = {
+    city: string;
+    countryName: string;
+    description: string;
+    name: string;
+    phone: string;
+  }
+  

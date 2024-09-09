@@ -5,6 +5,7 @@ import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
 import CompanyList from './components/CompanyList';
 import Company from './components/Company';
+import AddCompany from './components/AddCompany';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<CompanyList />} />
             <Route path="/company/:id" element={<Company />} />
             <Route path="/auth" element={<LoginForm />} />
+            <Route path="/add" element={<AddCompany />} />
           </Routes>
         </Router>
       </div>
